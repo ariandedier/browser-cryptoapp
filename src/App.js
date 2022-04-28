@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components"
+import Header from "./components/Header";
+import Title from "./components/Title";
+import AppBrowser from "./components/AppBrowser";
+import AppDesc from "./components/AppDesc";
+import Features from "./components/Features";
+import Ethereum from "./components/Ethereum";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header/>
+      <Title/>
+      <ContainerApp>
+        <AppBrowser/>
+        <AppDesc/>
+      </ContainerApp>
+      <Features/>
+      <Ethereum/>
+    </Container>
   );
 }
 
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #28292E;
+  
+`
+const ContainerApp = styled.div`
+  display: flex;
+  margin-top: 20px;
+  align-content: center;
+  justify-content: center;
+`
 export default App;
